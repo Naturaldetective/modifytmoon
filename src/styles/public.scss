@@ -1,0 +1,72 @@
+:root {
+  font-size: 4px;
+}
+html {
+  color: var(--text-c);
+  background-color: var(--bg-c);
+  transition: background 0.8s;
+}
+body {
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  background-color: var(--bg-c);
+}
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  background-color: #8888;
+  border-radius: 9999px;
+  &:hover {
+    background-color: #888b;
+  }
+}
+
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// draggable 托拖拽时 原元素样式
+.ghost {
+  visibility: hidden;
+}
+.dragging {
+  opacity: 1 !important;
+  .site__handle {
+    background-color: var(--site-hover-c);
+  }
+  .group__handle {
+    background-color: var(--site-hover-c);
+  }
+}
+
+.no_select {
+  user-select: none;
+}
+
+.n-base-select-menu .n-base-select-option.n-base-select-option--selected {
+  color: var(--primary-light-c) !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.dark::view-transition-new(root) {
+  z-index: 1;
+}

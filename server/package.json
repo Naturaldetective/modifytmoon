@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "dist/src/index.js",
+  "scripts": {
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": "tsc && fix-esm-import-path dist/src/index.js && cp -r public dist",
+    "prod": "pm2 start pm2.config.cjs",
+    "prod:docker": "pm2-runtime start pm2.config.cjs",
+    "stop": "pm2 stop pm2.config.cjs",
+    "delete": "pm2 delete pm2.config.cjs",
+    "clean:favicon": "rm -rf public/favicon/* && rm -rf dist/public/favicon/*"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-router": "^13.0.1",
+    "koa-static": "^5.0.0",
+    "ky": "^1.7.2",
+    "pm2": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa-router": "^7.4.8",
+    "@types/koa-static": "^4.0.4",
+    "@types/node": "^22.9.0",
+    "fix-esm-import-path": "^1.10.1",
+    "nodemon": "^3.1.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
