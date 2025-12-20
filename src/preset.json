@@ -809,12 +809,26 @@
         },
         {
           "id": 1753165990604,
-          "name": "信息收集",
+          "name": "空间测绘和信息收集",
           "siteList": [
             {
               "id": 1753166545301,
               "name": "FingerGo - 红队资产指纹发现与管理利器",
               "url": "https://github.com/huaimeng666/finger",
+              "favicon": "",
+              "bgColor": ""
+            },
+            {
+              "id": 1753166545302,
+              "name": "FoFa",
+              "url": "https://fofa.info/",
+              "favicon": "",
+              "bgColor": ""
+            },
+            {
+              "id": 1753166545303,
+              "name": "Zoomeyeapi",
+              "url": "https://www.zoomeye.ai/",
               "favicon": "",
               "bgColor": ""
             }
