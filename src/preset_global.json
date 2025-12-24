@@ -679,8 +679,10 @@
               "url": "https://developer.aliyun.com/mirror/?serviceType=&tag=&keyword=centos",
               "favicon": "",
               "desc": ""
-            },
-            {
+            } 
+          ]
+        },
+{
           "id": 1760679136734,
           "name": "Macos",
           "siteList": [
@@ -693,11 +695,9 @@
             }
           ]
         }
-          ]
-        }
       ]
     },
-    {
+        {
       "id": 1747117200169,
       "name": "攻击渗透",
       "groupList": [
