@@ -340,17 +340,10 @@
               "bgColor": "#73272d"
             },
             {
-              "id": 4,
-              "name": "通义千问",
-              "url": "https://tongyi.aliyun.com/qianwen/",
-              "favicon": " https://img.alicdn.com/imgextra/i1/O1CN01asLYeX1WhbsyEZn5u_!!6000000002820-55-tps-56-56.svg",
-              "bgColor": "#ea348e"
-            },
-            {
               "id": 2,
-              "name": "DeepSeek",
-              "url": "https://chat.deepseek.com/",
-              "favicon": " https://chat.deepseek.com/favicon.svg",
+              "name": "Gemini",
+              "url": "https://gemini.google.com/",
+              "favicon": "",
               "bgColor": "#054c01"
             },
             {
@@ -393,6 +386,27 @@
               "url": "https://us-east-1.run.claw.cloud/",
               "favicon": "",
               "bgColor": "#756b2a"
+            },
+            {
+              "id": 1747116993105,
+              "name": "vercel",
+              "url": "https://vercel.com/login?next=%2Fnigolas-projects",
+              "favicon": "",
+              "bgColor": "#5c0101"
+            },
+            {
+              "id": 1747117009698,
+              "name": "删除项目",
+              "url": "https://wenku.csdn.net/answer/20hes436w6",
+              "favicon": "",
+              "bgColor": "#263a3f"
+            },
+            {
+              "id": 1747117009698,
+              "name": "netlify",
+              "url": "https://app.netlify.com/",
+              "favicon": "",
+              "bgColor": "#263a3f"
             }
           ]
         },
@@ -419,13 +433,6 @@
               "url": "https://github.com/jic999/moon-web-start?tab=readme-ov-file",
               "favicon": "",
               "bgColor": "#f41e05"
-            },
-            {
-              "id": 1762840659169,
-              "name": "app.netlify.com 导航栏",
-              "url": "https://symphonious-croissant-77e49a.netlify.app/",
-              "favicon": "",
-              "desc": ""
             }
           ]
         },
@@ -624,26 +631,6 @@
           ]
         },
         {
-          "id": 1747116981531,
-          "name": "vercel",
-          "siteList": [
-            {
-              "id": 1747116993105,
-              "name": "vercel",
-              "url": "https://vercel.com/login?next=%2Fnigolas-projects",
-              "favicon": "",
-              "bgColor": "#5c0101"
-            },
-            {
-              "id": 1747117009698,
-              "name": "删除项目",
-              "url": "https://wenku.csdn.net/answer/20hes436w6",
-              "favicon": "",
-              "bgColor": "#263a3f"
-            }
-          ]
-        },
-        {
           "id": 1754557196252,
           "name": "其他",
           "siteList": [
@@ -692,7 +679,20 @@
               "url": "https://developer.aliyun.com/mirror/?serviceType=&tag=&keyword=centos",
               "favicon": "",
               "desc": ""
+            },
+            {
+          "id": 1760679136734,
+          "name": "Macos",
+          "siteList": [
+            {
+              "id": 17606791561213,
+              "name": "portkiller",
+              "url": "https://github.com/productdevbook/port-killer/",
+              "favicon": "",
+              "desc": ""
             }
+          ]
+        }
           ]
         }
       ]
