@@ -9,7 +9,7 @@ const branch = process.env.GH_BRANCH || 'main'
 
 const ID_REG = /^\w{5,64}$/
 
-export const router = new Router()
+export const router = new Router({ prefix: '/api' })
 
 // --- 接口 1: 同步/保存配置 ---
 router.post('/sync', async (ctx) => {
