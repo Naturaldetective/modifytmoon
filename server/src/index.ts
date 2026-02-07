@@ -11,27 +11,26 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 dotenv.config()
-if (process.env.NODE_ENV === 'production') {
-  dotenv.config({ path: path.resolve(__dirname, '../.env.production') })
-}
 
 const app = new Koa()
 
+// 中间件保持不变
 app.use(exceptionInterceptor())
    .use(koaBody())
    .use(faviconInterceptor())
    .use(router.routes())
    .use(koaStatic(path.resolve(__dirname, '../public')))
 
-// --- 核心修改部分 ---
+// --- 适配 Vercel 的核心逻辑 ---
 
-// 1. 只有在非 Vercel 环境下才手动启动服务器
-if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+// 在 Vercel 环境下，不要运行 app.listen()
+// 只有在本地开发时才手动监听端口
+if (!process.env.VERCEL) {
   const port = process.env.PORT || 3000
   app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
+    console.log(`本地环境运行在: http://localhost:${port}`)
   })
 }
 
-// 2. 必须导出 app.callback()，这是给 Vercel 调用的句柄
+// 关键！必须导出回调函数，Vercel 才能把请求传给 Koa
 export default app.callback()
