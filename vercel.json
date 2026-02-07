@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/server/src/index.ts"
+    },
+    {
+      "source": "/sync/:path*",
+      "destination": "/server/src/index.ts"
+    }
+  ],
+  "functions": {
+    "server/src/index.ts": {
+      "runtime": "vercel-node@latest"
+    }
+  }
+}
