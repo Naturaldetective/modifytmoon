@@ -11,18 +11,27 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 dotenv.config()
-if (process.env.NODE_ENV === 'production')
+if (process.env.NODE_ENV === 'production') {
   dotenv.config({ path: path.resolve(__dirname, '../.env.production') })
+}
 
 const app = new Koa()
 
 app.use(exceptionInterceptor())
-  .use(koaBody())
-  .use(faviconInterceptor())
-  .use(router.routes())
-  .use(koaStatic(path.resolve(__dirname, '../public')))
+   .use(koaBody())
+   .use(faviconInterceptor())
+   .use(router.routes())
+   .use(koaStatic(path.resolve(__dirname, '../public')))
 
-app.listen(process.env.PORT)
+// --- 核心修改部分 ---
 
-// eslint-disable-next-line no-console
-console.log(`Server is running on port ${process.env.PORT}`)
+// 1. 只有在非 Vercel 环境下才手动启动服务器
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  const port = process.env.PORT || 3000
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`)
+  })
+}
+
+// 2. 必须导出 app.callback()，这是给 Vercel 调用的句柄
+export default app.callback()
