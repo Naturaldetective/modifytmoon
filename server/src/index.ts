@@ -21,16 +21,15 @@ app.use(exceptionInterceptor())
    .use(router.routes())
    .use(koaStatic(path.resolve(__dirname, '../public')))
 
-// --- 适配 Vercel 的核心逻辑 ---
 
-// 在 Vercel 环境下，不要运行 app.listen()
-// 只有在本地开发时才手动监听端口
 if (!process.env.VERCEL) {
-  const port = process.env.PORT || 3000
-  app.listen(port, () => {
-    console.log(`本地环境运行在: http://localhost:${port}`)
-  })
+  app.listen(3000, () => console.log('Running locally...'))
 }
 
-// 关键！必须导出回调函数，Vercel 才能把请求传给 Koa
+// 增加一个简单的日志中间件，用来在 Vercel Logs 里排查路径
+app.use(async (ctx, next) => {
+  console.log(`[DEBUG] Request Path: ${ctx.path}, Method: ${ctx.method}`);
+  await next();
+});
+
 export default app.callback()
