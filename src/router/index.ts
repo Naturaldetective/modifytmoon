@@ -12,12 +12,19 @@ router.beforeEach(async (to, from, next) => {
   if (to.path === '/callback')
     return next()
 
-  const authed = await isAuthenticated()
-  if (authed)
-    return next()
+  try {
+    const authed = await isAuthenticated()
+    if (authed)
+      return next()
 
-  // 未认证，重定向到 Okta 登录
-  await oktaAuth.signInWithRedirect({ originalUri: to.fullPath })
+    // 未认证，重定向到 Okta 登录
+    await oktaAuth.signInWithRedirect({ originalUri: to.fullPath })
+  }
+  catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('[Okta] 跳转登录失败', error)
+    next(false)
+  }
 })
 
 export default router

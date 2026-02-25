@@ -3,6 +3,11 @@ import { OktaAuth } from '@okta/okta-auth-js'
 const issuer = import.meta.env.VITE_OKTA_ISSUER
 const clientId = import.meta.env.VITE_OKTA_CLIENT_ID
 
+// 方便线上排查：启动时打印一次配置是否就绪
+// 注意不要在这里输出敏感信息（issuer / clientId 本身不算敏感）
+// eslint-disable-next-line no-console
+console.info('[Okta] config', { hasIssuer: !!issuer, hasClientId: !!clientId })
+
 if (!issuer || !clientId) {
   // eslint-disable-next-line no-console
   console.warn('[Okta] VITE_OKTA_ISSUER 或 VITE_OKTA_CLIENT_ID 未配置，将无法完成登录')
