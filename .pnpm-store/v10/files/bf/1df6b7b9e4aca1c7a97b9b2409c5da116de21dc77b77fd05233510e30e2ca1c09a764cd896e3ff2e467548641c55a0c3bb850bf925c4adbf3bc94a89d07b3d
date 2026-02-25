@@ -1,0 +1,10 @@
+import {
+  src_default
+} from "./chunk-2IZ2AQ4B.js";
+import "./chunk-F3GQZ4CH.js";
+
+// src/webpack.ts
+var webpack_default = src_default.webpack;
+export {
+  webpack_default as default
+};

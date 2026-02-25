@@ -1,0 +1,12 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
+
+var _chunkPLMH4BDPcjs = require('./chunk-PLMH4BDP.cjs');
+require('./chunk-SF3BUH76.cjs');
+
+// src/webpack.ts
+var webpack_default = _chunkPLMH4BDPcjs.src_default.webpack;
+
+
+exports.default = webpack_default;
+
+module.exports = exports.default;

@@ -1,0 +1,10 @@
+import {
+  src_default
+} from "./chunk-2IZ2AQ4B.js";
+import "./chunk-F3GQZ4CH.js";
+
+// src/vite.ts
+var vite_default = src_default.vite;
+export {
+  vite_default as default
+};

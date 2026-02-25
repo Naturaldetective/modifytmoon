@@ -1,0 +1,30 @@
+{
+  "name": "@stylistic/eslint-plugin",
+  "version": "0.0.6",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/eslint-stylistic/eslint-stylistic#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eslint-stylistic/eslint-stylistic.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/eslint-stylistic/eslint-stylistic/issues"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "eslint": "*"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin-js": "0.0.6",
+    "@stylistic/eslint-plugin-ts": "0.0.6"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild",
+    "dev": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild --watch"
+  }
+}

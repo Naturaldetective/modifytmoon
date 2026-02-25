@@ -13,6 +13,7 @@
     "prod": "sh ./scripts/deploy.sh"
   },
   "dependencies": {
+    "@okta/okta-auth-js": "^7.14.1",
     "@vueuse/components": "^10.1.2",
     "@vueuse/core": "^10.0.2",
     "default-passive-events": "^2.0.0",

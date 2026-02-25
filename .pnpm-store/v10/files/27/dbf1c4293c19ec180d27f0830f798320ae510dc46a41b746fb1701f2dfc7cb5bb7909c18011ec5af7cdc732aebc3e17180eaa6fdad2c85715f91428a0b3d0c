@@ -1,0 +1,10 @@
+import {
+  src_default
+} from "./chunk-2IZ2AQ4B.js";
+import "./chunk-F3GQZ4CH.js";
+
+// src/rollup.ts
+var rollup_default = src_default.rollup;
+export {
+  rollup_default as default
+};

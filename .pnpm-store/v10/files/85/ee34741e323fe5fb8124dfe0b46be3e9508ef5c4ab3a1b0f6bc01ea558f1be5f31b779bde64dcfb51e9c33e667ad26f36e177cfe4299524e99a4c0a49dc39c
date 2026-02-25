@@ -1,0 +1,64 @@
+'use strict';
+
+var utils = require('@typescript-eslint/utils');
+require('@typescript-eslint/utils/ast-utils');
+var blockSpacing = require('./block-spacing.js');
+require('graphemer');
+require('@typescript-eslint/type-utils');
+
+const baseRule = blockSpacing.getESLintCoreRule("quotes");
+var quotes = blockSpacing.createRule({
+  name: "quotes",
+  meta: {
+    type: "layout",
+    docs: {
+      description: "Enforce the consistent use of either backticks, double, or single quotes",
+      extendsBaseRule: true
+    },
+    fixable: "code",
+    hasSuggestions: baseRule.meta.hasSuggestions,
+    messages: baseRule.meta.messages,
+    schema: baseRule.meta.schema
+  },
+  defaultOptions: [
+    "double",
+    {
+      allowTemplateLiterals: false,
+      avoidEscape: false
+    }
+  ],
+  create(context, [option]) {
+    const rules = baseRule.create(context);
+    function isAllowedAsNonBacktick(node) {
+      const parent = node.parent;
+      switch (parent?.type) {
+        case utils.AST_NODE_TYPES.TSAbstractMethodDefinition:
+        case utils.AST_NODE_TYPES.TSMethodSignature:
+        case utils.AST_NODE_TYPES.TSPropertySignature:
+        case utils.AST_NODE_TYPES.TSModuleDeclaration:
+        case utils.AST_NODE_TYPES.TSLiteralType:
+        case utils.AST_NODE_TYPES.TSExternalModuleReference:
+          return true;
+        case utils.AST_NODE_TYPES.TSEnumMember:
+          return node === parent.id;
+        case utils.AST_NODE_TYPES.TSAbstractPropertyDefinition:
+        case utils.AST_NODE_TYPES.PropertyDefinition:
+          return node === parent.key;
+        default:
+          return false;
+      }
+    }
+    return {
+      Literal(node) {
+        if (option === "backtick" && isAllowedAsNonBacktick(node))
+          return;
+        rules.Literal(node);
+      },
+      TemplateLiteral(node) {
+        rules.TemplateLiteral(node);
+      }
+    };
+  }
+});
+
+exports.quotes = quotes;

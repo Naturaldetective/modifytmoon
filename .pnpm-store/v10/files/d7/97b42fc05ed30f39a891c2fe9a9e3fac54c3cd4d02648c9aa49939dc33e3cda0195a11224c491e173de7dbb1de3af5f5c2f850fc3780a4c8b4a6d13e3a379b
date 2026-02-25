@@ -1,0 +1,6 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
+
+var _chunkSF3BUH76cjs = require('./chunk-SF3BUH76.cjs');
+
+
+exports.transformDefineStyleX = _chunkSF3BUH76cjs.transformDefineStyleX;

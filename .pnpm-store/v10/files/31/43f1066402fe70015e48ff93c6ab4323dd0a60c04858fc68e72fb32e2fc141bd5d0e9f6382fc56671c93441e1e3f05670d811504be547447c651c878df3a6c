@@ -1,0 +1,36 @@
+{
+  "name": "@stylistic/eslint-plugin-ts",
+  "version": "0.0.6",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/eslint-stylistic/eslint-stylistic#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eslint-stylistic/eslint-stylistic.git",
+    "directory": "packages/eslint-plugin-ts"
+  },
+  "bugs": {
+    "url": "https://github.com/eslint-stylistic/eslint-stylistic/issues"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "eslint": "*"
+  },
+  "dependencies": {
+    "@typescript-eslint/scope-manager": "^6.7.2",
+    "@typescript-eslint/type-utils": "^6.7.2",
+    "@typescript-eslint/utils": "^6.7.2",
+    "graphemer": "^1.4.0",
+    "@stylistic/eslint-plugin-js": "0.0.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/rule-tester": "^6.7.2"
+  },
+  "scripts": {
+    "build": "rimraf dist && rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild",
+    "dev": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild --watch"
+  }
+}

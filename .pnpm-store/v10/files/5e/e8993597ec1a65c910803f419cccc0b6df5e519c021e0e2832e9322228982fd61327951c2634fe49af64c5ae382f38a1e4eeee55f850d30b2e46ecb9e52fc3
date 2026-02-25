@@ -1,0 +1,13 @@
+'use strict';
+
+var js = require('@stylistic/eslint-plugin-js');
+var ts = require('@stylistic/eslint-plugin-ts');
+
+var index = {
+  rules: {
+    ...js.rules,
+    ...ts.rules
+  }
+};
+
+module.exports = index;

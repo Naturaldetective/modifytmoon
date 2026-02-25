@@ -1,0 +1,12 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
+
+var _chunkY4NNW2TCcjs = require('./chunk-Y4NNW2TC.cjs');
+require('./chunk-TUY3BWIA.cjs');
+
+// src/vite.ts
+var vite_default = _chunkY4NNW2TCcjs.src_default.vite;
+
+
+exports.default = vite_default;
+
+module.exports = exports.default;

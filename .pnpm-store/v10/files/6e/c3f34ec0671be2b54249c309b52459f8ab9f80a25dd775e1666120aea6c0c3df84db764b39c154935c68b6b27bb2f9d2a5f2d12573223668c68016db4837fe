@@ -1,0 +1,10 @@
+import {
+  src_default
+} from "./chunk-2IZ2AQ4B.js";
+import "./chunk-F3GQZ4CH.js";
+
+// src/esbuild.ts
+var esbuild_default = src_default.esbuild;
+export {
+  esbuild_default as default
+};

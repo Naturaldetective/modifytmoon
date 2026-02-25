@@ -1,0 +1,45 @@
+import type { Preset } from 'unocss';
+
+declare interface IScalpelOptions {
+    colors?: Record<string, string>;
+    /**
+     * @defaultValue 'px'
+     */
+    unit?: typeof UNIT_ENUM[number];
+    mediaQueries?: Record<string, string>;
+    /**
+     * @defaultValue false
+     */
+    important?: boolean;
+    /**
+     * @defaultValue []
+     */
+    ignoreRules?: string[];
+    vToAny?: {
+        /**
+         * @defaultValue 'rem'
+         */
+        unit: typeof UNIT_ENUM[number];
+        /**
+         * @defaultValue 16
+         */
+        rootValue: number;
+        /**
+         * @defaultValue 5
+         */
+        unitPrecision?: number;
+        /**
+         * @defaultValue 1
+         */
+        minPixelValue?: number;
+    };
+}
+
+/**
+ * @public
+ */
+export declare function presetScalpel(options?: IScalpelOptions): Preset;
+
+declare const UNIT_ENUM: readonly ["cm", "mm", "in", "px", "pt", "pc", "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax", "rpx", "p", "%", "v"];
+
+export { }

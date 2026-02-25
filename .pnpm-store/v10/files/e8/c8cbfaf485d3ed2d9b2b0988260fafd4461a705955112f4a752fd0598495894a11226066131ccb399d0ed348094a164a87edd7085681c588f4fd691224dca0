@@ -1,0 +1,12 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
+
+var _chunkEWISQHPZcjs = require('./chunk-EWISQHPZ.cjs');
+require('./chunk-NVHOL5KO.cjs');
+
+// src/rolldown.ts
+var rolldown_default = _chunkEWISQHPZcjs.src_default.rolldown;
+
+
+exports.default = rolldown_default;
+
+module.exports = exports.default;

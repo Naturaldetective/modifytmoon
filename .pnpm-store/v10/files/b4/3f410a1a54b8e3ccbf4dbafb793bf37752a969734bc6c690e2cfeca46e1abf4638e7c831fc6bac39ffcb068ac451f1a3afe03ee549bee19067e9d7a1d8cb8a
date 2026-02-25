@@ -1,0 +1,12 @@
+"use strict";Object.defineProperty(exports, "__esModule", {value: true});
+
+var _chunkPLMH4BDPcjs = require('./chunk-PLMH4BDP.cjs');
+require('./chunk-SF3BUH76.cjs');
+
+// src/vite.ts
+var vite_default = _chunkPLMH4BDPcjs.src_default.vite;
+
+
+exports.default = vite_default;
+
+module.exports = exports.default;
